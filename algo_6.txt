@@ -1,0 +1,14 @@
+*Algorithme Test de parite*
+
+Variables:
+	n: entier
+	
+Debut:
+	Afficher("Entrer le nombre n : ")
+	Lire(n)
+	Si (n % 2 == 0) Alors
+		Afficher(n, "est un nombre pair")
+	Sinon
+		Afficher(n, "est un nombre impair")
+	FinSi
+Fin

@@ -1,0 +1,14 @@
+*Algorithme Resolution d'une equation du 1er degre*
+*c'est a dire, de type ax+b = 0*
+
+Variables:
+	a, b, x: entier
+	
+Debut:
+	Afficher("Entrer a : ")
+	Lire(a)
+	Afficher("Entrer b : ")
+	Lire(b)
+	x <- (-(b/a))
+	Afficher("On a, x = ", x)
+Fin

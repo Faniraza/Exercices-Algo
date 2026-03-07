@@ -1,0 +1,16 @@
+*Algorithme Inverser une Chaine*
+
+Variables :
+	mot : chaine
+	inverse : chaine
+	caractere : caractere
+
+Début :
+	Afficher("Entrez le texte à inverser : ")
+	Lire(mot)
+	inverse <- ""
+	Pour chaque caractere dans mot :
+		inverse <- caractere + inverse
+	FinPour
+	Afficher("Le texte inversé est : ", inverse)
+Fin

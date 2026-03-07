@@ -1,0 +1,16 @@
+*Algorithme Calculer la somme des n premiers nombre*
+
+Variables:
+	n, i, total: reels
+	
+Debut:
+	i <- 0
+	total <- 0
+	Afficher("Entrer la valeur de n : ")
+	Lire(n)
+	pour i allant de 0 a n Faire
+		total <- total + i
+	Finpour
+	Afficher("La total des n premiers nombre est : ", total)
+Fin
+	

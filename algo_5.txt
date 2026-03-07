@@ -1,0 +1,11 @@
+*Algorithme Calculer le cube*
+
+Variables:
+	n, resultat: entier
+	
+Debut:
+	Afficher("Entrer le nombre n : ")
+	Lire(n)
+	resultat <- (n * n * n)
+	Afficher("Le cube de ", n, "est", resultat)
+Fin

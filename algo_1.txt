@@ -1,9 +1,9 @@
-Algorithme Calcule_surface_rectangle
+*Algorithme Calcule_surface_rectangle*
 
-Variables
+Variables:
   longueur, largeur, surface : Reels
 
-Debut
+Debut:
   Afficher("Entrer la longueur : ")
   Lire(longueur)
   Afficher("Entrer la largeur : ")
