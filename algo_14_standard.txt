@@ -1,0 +1,13 @@
+VARIABLES
+    n REEL
+
+DEBUT
+    AFFICHER "Entrer n "
+    AFFICHER n
+    LIRE n
+
+    AFFICHER "Le carre de "
+    AFFICHER n
+    AFFICHER " est "
+    AFFICHER n * n
+FIN

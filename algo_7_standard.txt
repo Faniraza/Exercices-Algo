@@ -1,0 +1,19 @@
+VARIABLES
+    a       REEL
+    b       REEL
+    c       REEL
+    moyenne REEL
+
+DEBUT
+    AFFICHER "Entrer le 1er nombre : "
+    LIRE a
+    AFFICHER "Entrer le 2e nombre : "
+    LIRE b
+    AFFICHER "Entrer le 3e nombre : "
+    LIRE c
+
+    moyenne <- (a + b + c) / 3
+
+    AFFICHER "La moyenne est : "
+    AFFICHER moyenne
+FIN

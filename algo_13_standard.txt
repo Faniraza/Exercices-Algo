@@ -1,0 +1,27 @@
+VARIABLES
+    min REEL
+    a   REEL
+    b   REEL
+    c   REEL
+
+DEBUT
+    AFFICHER "Entrer a "
+    LIRE a
+    AFFICHER "Entrer b "
+    LIRE b
+    AFFICHER "Entrer c "
+    LIRE c
+
+    min <- a
+
+    SI (b < a) ALORS
+        min <- b
+    FIN_SI
+
+    SI (c < b) ALORS
+        min <- c
+    FIN_SI
+
+    AFFICHER "Le minimum est "
+    AFFICHER min
+FIN

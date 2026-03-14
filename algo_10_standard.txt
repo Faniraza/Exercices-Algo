@@ -1,0 +1,18 @@
+VARIABLES
+    i    REEL
+    fact REEL
+    n    REEL
+
+DEBUT
+    i <- 0
+    AFFICHER "Entrer un nombre n : "
+    LIRE n
+    fact <- 1
+
+    POUR (i <- 1, i <= n, i<-i+1) ALORS
+        fact <- fact * i
+    FINPOUR
+
+    AFFICHER "Factorielle(n) = "
+    AFFICHER fact
+FIN

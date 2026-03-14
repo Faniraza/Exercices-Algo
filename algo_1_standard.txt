@@ -1,0 +1,14 @@
+VARIABLES
+    longueur REEL
+    largeur  REEL
+    surface  REEL
+
+DEBUT
+    AFFICHER "Entrer la longueur :"
+    LIRE longueur
+    AFFICHER "Entrer la largeur : "
+    LIRE largeur
+    surface <- longueur * largeur
+    AFFICHER "La surface du rectangle est : "
+    AFFICHER surface
+FIN

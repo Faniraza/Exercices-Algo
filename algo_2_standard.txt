@@ -1,0 +1,17 @@
+VARIABLES
+    n REEL
+    i REEL
+
+DEBUT
+    i <- 0
+    AFFICHER "Entrer un nombre : "
+    LIRE n
+
+    POUR (i <- 0, i <= 10, i<-i+1) ALORS
+        AFFICHER n
+        AFFICHER " x "
+        AFFICHER i
+        AFFICHER " = "
+        AFFICHER n * i
+    FINPOUR
+FIN

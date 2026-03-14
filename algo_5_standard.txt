@@ -1,0 +1,15 @@
+VARIABLES
+    n        REEL
+    resultat REEL
+
+DEBUT
+    AFFICHER "Entrer le nombre n : "
+    LIRE n
+
+    resultat <- n * n * n
+
+    AFFICHER "Le cube de "
+    AFFICHER n
+    AFFICHER " est "
+    AFFICHER resultat
+FIN

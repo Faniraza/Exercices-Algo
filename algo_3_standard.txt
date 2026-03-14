@@ -1,0 +1,23 @@
+VARIABLES
+    a REEL
+    b REEL
+    x REEL
+
+DEBUT
+    AFFICHER "Entrer a : "
+    LIRE a
+    AFFICHER "Entrer b : "
+    LIRE b
+
+    x <- (-(b/a))
+
+    AFFICHER "On a, x = "
+    AFFICHER x
+    AFFICHER " ou "
+    AFFICHER "x = "
+    AFFICHER "-("
+    AFFICHER b
+    AFFICHER "/"
+    AFFICHER a
+    AFFICHER ")"
+FIN

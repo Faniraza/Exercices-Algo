@@ -1,0 +1,17 @@
+VARIABLES
+    i REEL
+    n REEL
+
+DEBUT
+    AFFICHER "Entrer n "
+    LIRE n
+
+    POUR (i <- 0, i <= n, i<-i+1) ALORS
+        SI (i * i == n) ALORS
+            AFFICHER "La racine de "
+            AFFICHER n
+            AFFICHER " est "
+            AFFICHER i
+        FIN_SI
+    FINPOUR
+FIN

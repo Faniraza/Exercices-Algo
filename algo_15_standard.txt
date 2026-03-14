@@ -1,0 +1,20 @@
+VARIABLES
+    n REEL
+    u  REEL
+    i REEL
+
+DEBUT
+    AFFICHER "Entrez la valeur de u(0) : "
+    LIRE u
+    AFFICHER "Entrez le rang n : "
+    LIRE n
+    i <- 0
+    TANT_QUE (i < n) ALORS
+        u <- 2 * u + 1
+        i <- i + 1
+    FIN TANT QUE
+    AFFICHER "u("
+    AFFICHER n
+    AFFICHER ") = "
+    AFFICHER u
+FIN

@@ -1,0 +1,27 @@
+VARIABLES
+    a   REEL
+    b   REEL
+    c   REEL
+    max REEL
+
+DEBUT
+    AFFICHER "Entrer le 1er nombre : "
+    LIRE a
+    AFFICHER "Entrer le 2e nombre : "
+    LIRE b
+    AFFICHER "Entrer le 3e nombre : "
+    LIRE c
+
+    max <- a
+
+    SI (b > max) ALORS
+        max <- b
+    FIN_SI
+
+    SI (c > max) ALORS
+        max <- c
+    FIN_SI
+
+    AFFICHER "Le maximum : "
+    AFFICHER max
+FIN

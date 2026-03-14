@@ -1,0 +1,24 @@
+VARIABLES
+    i       REEL
+    n       REEL
+    nb      REEL
+    temp_nb REEL
+
+DEBUT
+    AFFICHER "Enter nb "
+    LIRE nb
+    temp_nb <- nb
+
+    AFFICHER "Entrer n (puissance) "
+    LIRE n
+
+    POUR (i <- 1, i <= n - 1, i<-i+1) ALORS
+        nb <- nb * nb
+    FINPOUR
+
+    AFFICHER temp_nb
+    AFFICHER " ^ "
+    AFFICHER n
+    AFFICHER " est "
+    AFFICHER nb
+FIN

@@ -1,0 +1,128 @@
+VARIABLES
+    i REEL
+    j REEL
+    tmp REEL
+    n REEL
+    tab LISTE
+    somme REEL
+    moyenne REEL
+    min REEL
+    max REEL
+    index_min REEL
+    index_max REEL
+    val REEL
+
+DEBUT
+    AFFICHER "Entrer n : "
+    LIRE n
+
+    i <- 0
+    somme <- 0
+    moyenne <- 0
+    val <- 0
+
+    POUR (i <- 0, i <= n, i<-i+1) ALORS
+        AFFICHER "Entrer le nombre "
+        AFFICHER i
+        LIRE val
+        tab[i] <- val
+    FINPOUR
+
+    POUR (i <- 0, i <= n, i<-i+1) ALORS
+        somme <- somme + tab[i]
+    FINPOUR
+
+    moyenne <- somme / n
+
+    AFFICHER "La somme de n nombre est : "
+    AFFICHER somme
+    AFFICHER "La moyenne de n nombre est : "
+    AFFICHER moyenne
+
+    //---------------------------------------------
+    min <- tab[0]
+
+    POUR (i <- 0, i <= n, i<-i+1) ALORS
+        SI (tab[i] < min) ALORS
+            min <- tab[i]
+        FIN_SI
+    FINPOUR
+
+    AFFICHER "Le minimum est : "
+    AFFICHER min
+
+    POUR (i <- 0, i <= n, i<-i+1) ALORS
+        SI (tab[i] == min) ALORS
+            index_min <- i
+        FIN_SI
+    FINPOUR
+
+    AFFICHER "L'index du min est : "
+    AFFICHER index_min
+
+    max <- tab[0]
+
+    POUR (i <- 0, i <= n, i<-i+1) ALORS
+        SI (tab[i] > max) ALORS
+            max <- tab[i]
+        FIN_SI
+    FINPOUR
+
+    AFFICHER "Le maximum est : "
+    AFFICHER max
+
+    POUR (i <- 0, i <= n, i<-i+1) ALORS
+        SI (tab[i] == max) ALORS
+            index_max <- i
+        FIN_SI
+    FINPOUR
+
+    AFFICHER "L'index du max est : "
+    AFFICHER index_max
+
+    //---------------------------------------------
+    i <- 0
+
+    POUR (i <- 0, i <= n, i<-i+1) ALORS
+        j <- i + 1
+
+        POUR (j <- 0, j <= n, j<-j+1) ALORS
+            SI (tab[i] < tab[j]) ALORS
+                tmp <- tab[i]
+                tab[i] <- tab[j]
+                tab[j] <- tmp
+            FIN_SI
+        FINPOUR
+    FINPOUR
+
+    AFFICHER "Le tableau d'ordre croissant est "
+
+    POUR (i <- 0, i <= n, i<-i+1) ALORS
+        AFFICHER tab[i]
+        AFFICHER " | "
+    FINPOUR
+
+    AFFICHER "\n"
+
+    i <- 0
+    //-------------------------------------------
+
+    POUR (i <- 0, i <= n, i<-i+1) ALORS
+        j <- i + 1
+
+        POUR (j <- 0, j <= n, j<-j+1) ALORS
+            SI (tab[i] > tab[j]) ALORS
+                tmp <- tab[i]
+                tab[i] <- tab[j]
+                tab[j] <- tmp
+            FIN_SI
+        FINPOUR
+    FINPOUR
+
+    AFFICHER "Le tableau d'ordre decroissant est "
+
+    POUR (i <- 0, i <= n, i<-i+1) ALORS
+        AFFICHER tab[i]
+        AFFICHER " | "
+    FINPOUR
+FIN

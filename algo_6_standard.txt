@@ -1,0 +1,17 @@
+VARIABLES
+    n REEL
+
+DEBUT
+    AFFICHER "Entrer le nombre n : "
+    LIRE n
+
+    SI (n % 2 == 0) ALORS
+        AFFICHER n
+        AFFICHER " est un nombre pair"
+    FIN_SI
+
+    SI (n % 2  != 0) ALORS
+        AFFICHER n
+        AFFICHER " est un nombre impair"
+    FIN_SI
+FIN

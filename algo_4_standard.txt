@@ -1,0 +1,19 @@
+VARIABLES
+    n     REEL
+    i     REEL
+    total REEL
+
+DEBUT
+    i <- 0
+    total <- 0
+
+    AFFICHER "Entrer la valeur de n : "
+    LIRE n
+
+    POUR (i <- 0, i <= n, i<-i+1) ALORS
+        total <- total + i
+    FINPOUR
+
+    AFFICHER "La total des n premiers nombre est : "
+    AFFICHER total
+FIN
