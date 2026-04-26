@@ -2,71 +2,65 @@
 #include <stdlib.h>
 #include <string.h>
 
+void usage(void)
+{
+    printf("Usage: ./func 'f(x)=' '4x+1' 'pour' 'x=7'\n");
+}
+
+int check_prefix(char *str, char *prefix)
+{
+    return strncmp(str, prefix, strlen(prefix)) == 0 && strlen(str) == strlen(prefix);
+}
+
+void parse_expr(char *expr, double *a, double *b)
+{
+    char *x_pos = strchr(expr, 'x');
+
+	if (!x_pos)
+    {
+        printf("Erreur: expression invalide, 'x' manquant\n");
+        exit(1);
+    }
+    *a = atof(expr);
+    *b = atof(x_pos + 1);
+}
+
+double solve(char *expr, double x)
+{
+    double a;
+    double b;
+
+    parse_expr(expr, &a, &b);
+    return (a * x + b);
+}
+
 int main(int ac, char **av)
 {
-	int		i;
-	int		j;
-	size_t	c;
-	char ignore[6] = "f(x)=";
-	char ignore2[5] = "pour";
-	char *x;
-	int int_x;
+	double	x;
+	double	res;
 
-	i = 0;
-	j = 0;
-	c = 0;
-	if (ac != 5)
+    if (ac != 5)
 	{
-		printf("L'argument doit etre ./fonction 'f(x)= 2x+3 pour x=3'\n");
+    	usage();
 		return (0);
 	}
-	// check f(x)=
-	while (av[1][i])
+    if (!check_prefix(av[1], "f(x)="))
 	{
-		if (av[1][i] == ignore[i])
-			c++;
-		i++;
+		printf("Erreur: attendu 'f(x)='\n");
+        return (0);
 	}
-	if (c != strlen(av[1]))
+	if (!check_prefix(av[3], "pour"))
 	{
-		printf("L'argument doit etre ./fonction 'f(x) = 2x+3 pour x=3'\nf(x)= et pas autre chose\n");
+        printf("Erreur: attendu 'pour'\n");
 		return (0);
 	}
-	// check pour
-	i = 0;
-	c = 0;
-	while (av[3][i])
+	if (strncmp(av[4], "x=", 2) != 0)
 	{
-		if (av[3][i] == ignore2[i])
-			c++;
-		i++;
-	}
-	if (c != strlen(av[3]))
-	{
-		printf("L'argument doit etre ./fonction 'f(x) = 2x+3 pour x=3'\npour pas autre chose\n");
+		printf("Erreur: attendu 'x=<valeur>'\n");
 		return (0);
 	}
-	i = 0;
-	while (av[4][i])
-	{
-		if (av[4][0] == 'x' && av[4][1] == '=')
-			i += 2;
-		else
-		{
-			printf("L'argument doit etre ./fonction 'f(x) = 2x+3 pour x=3'\nx= et pas d'autre\n");
-			return (0);
-		}
-		i++;
-	}
-	x = malloc(((int)strlen(av[4]) - 2) + 1);
-	i = 2;
-	while (av[4][i])
-	{
-		x[j] = av[4][i];
-		j++;
-		i++;
-	}
-	int_x = atof(x);
-	// printf("== %d ==\n", int_x);
-	return (0);
+    x = atof(av[4] + 2);
+	res = solve(av[2], x);
+	printf("f(%g) = %g\n", x, res);
+    return 0;
 }
